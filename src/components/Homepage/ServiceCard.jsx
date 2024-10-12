@@ -34,7 +34,7 @@ const ServiceCard = () => {
                             <span className='text-red-500'>Tk 2960</span>
                         </div>
 
-                        <div className="card-actions justify-end">
+                        <div className="card-actions justify-center">
                             {/* <button className="btn  text-white w-full  hover:btn-error  hover:text-white ">Shop Now</button> */}
                             <Link href={`/contact`}>  <button className="btn  text-white w-full  hover:btn-error  hover:text-white ">View Details</button></Link>
 
@@ -68,7 +68,7 @@ const ServiceCard = () => {
                             <span className='text-red-500'>Tk 2960</span>
                         </div>
 
-                        <div className="card-actions justify-end">
+                        <div className="card-actions justify-center">
                             {/* <button className="btn  text-white w-full  hover:btn-error  hover:text-white ">Shop Now</button> */}
                             <Link href={`/party`}>  <button className="btn  text-white w-full  hover:btn-error  hover:text-white ">View Details</button></Link>
 
