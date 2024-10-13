@@ -44,12 +44,7 @@ const Navbar = () => {
                                 ))
                             }
                         
-                        <li><div className="dropdown dropdown-hover">
-                            <div tabIndex={0}>Hover</div>
-                            <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow mt-24">
-                                <li>Hello</li>
-                            </ul>
-                        </div></li>
+                       
                         {/* ............................................... */}
                     </ul>
                 </div>
@@ -66,10 +61,7 @@ const navItems = [
         title: "Home",
         path: "/"
     },
-    {
-        title: "About",
-        path: "/about"
-    },
+ 
     {
         title: "Services",
         path: "/services"
@@ -78,13 +70,15 @@ const navItems = [
         title: "MyBookings",
         path: "/my-bookings"
     },
+    
     {
-        title: "Blog",
-        path: "/blog"
+        title: "Contact",
+        path: "/contact"
     },
+   
     {
-        title: "Contacts",
-        path: "/contacts"
+        title: "Login",
+        path: "/login"
     },
 ]
 
