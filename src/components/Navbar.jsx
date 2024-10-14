@@ -80,6 +80,7 @@ const navItems = [
         title: "Login",
         path: "/login"
     },
+  
 ]
 
 export default Navbar;

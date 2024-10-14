@@ -1,7 +1,7 @@
 "use client"
 
 // import SocialSignin from '@/components/Shared/SocialSignin';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -15,18 +15,20 @@ const SignUpPage = () => {
             password: event.target.password.value
         }
         console.log(newUser);
-        // api request korbo
-        const resp = await fetch("http://localhost:3000/signup/api" , {
-            method: "POST",
-            body :JSON.stringify(newUser),
-            headers : {
-                "content-type" :"application/json"
-            }
 
-        })
+
+        // api request korbo database e save korar jonno
+        // const resp = await fetch("http://localhost:3000/signup/api" , {
+        //     method: "POST",
+        //     body :JSON.stringify(newUser),
+        //     headers : {
+        //         "content-type" :"application/json"
+        //     }
+
+        // })
         // console.log(resp)
 
-// // reset korey likha gula form er
+// reset korey likha gula form er
 // if(resp.status === 200){
 //     event.target.reset()
 // }
@@ -47,10 +49,10 @@ const SignUpPage = () => {
                             <input type="text" name="name" placeholder="your name" className="mt-3 input input-bordered w-full max-w-xs" />
                             <br></br>
                             <label htmlFor="email">Email</label><br></br>
-                            <input type="text" name="email" placeholder="your email" className="mt-3 input input-bordered w-full max-w-xs" />
+                            <input type="email" name="email" placeholder="your email" className="mt-3 input input-bordered w-full max-w-xs" />
                             <br></br>
                             <label htmlFor="password">password</label><br></br>
-                            <input type="text"
+                            <input type="password"
                                 name="password"
                                 placeholder="your password"
                                 className="mt-3 input input-bordered w-full max-w-xs" />
