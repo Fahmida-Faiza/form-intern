@@ -1,7 +1,7 @@
 
 "use client"
 
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import React from 'react';
 
@@ -51,6 +51,12 @@ const Navbar = () => {
                         {/* ............................................... */}
                     </ul>
                 </div>
+
+                {
+                     !session.data  ?
+                     <Link href="/login" className='btn btn-primary px-8'>Login</Link> :
+                     <button className='btn btn-primary px-8' onClick={() => signOut()}>LogOut</button>
+                }
                 <div className="navbar-end"></div>
             </div>
         </div>
@@ -79,11 +85,7 @@ const navItems = [
         path: "/contact"
     },
    
-    {
-        title: "Login",
-        path: "/login"
-    },
-  
+   
 ]
 
 export default Navbar;

@@ -5,10 +5,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import {signIn} from "next-auth/react"
+import { useRouter } from 'next/navigation';
+
 // import SocialSignin from '@/components/Shared/SocialSignin';
 
 
 const page = () => {
+    const router = useRouter()
     // login
     const handleLogin = async (event) => {
         event.preventDefault();
@@ -19,8 +22,11 @@ const page = () => {
             password,
              redirect: false
         })
-        console.log(resp)
-        
+        // console.log(resp)
+        if(resp.status === 200){
+            router.push('/')
+        }
+       
        
     }
     
