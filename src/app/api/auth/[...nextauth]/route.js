@@ -1,7 +1,7 @@
 import NextAuth from "next-auth/next"
 import CredentialsProvider from "next-auth/providers/credentials";
-// import GoogleProvider from "next-auth/providers/google";
-// import GithubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
+import GithubProvider from "next-auth/providers/github";
 import bcrypt from "bcrypt";
 import { connectDB } from "@/lib/connectDB";
 
@@ -38,15 +38,15 @@ const handler = NextAuth({
         return currentUser;
       },
     }),
-    // GoogleProvider({
-    //   clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
-    //   clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET,
-    // }),
+    GoogleProvider({
+      clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+      clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET,
+    }),
 
-    // GithubProvider({
-    //   clientId: process.env.GITHUB_ID,
-    //   clientSecret: process.env.GITHUB_SECRET,
-    // }),
+    GithubProvider({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
+    }),
   ],
   // database e save kortysi google or github r acount gulo
   callbacks: {

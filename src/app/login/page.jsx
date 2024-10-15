@@ -6,6 +6,7 @@ import Link from 'next/link';
 import React from 'react';
 import {signIn} from "next-auth/react"
 import { useRouter } from 'next/navigation';
+import SocialSignin from '@/components/SocialSignin';
 
 // import SocialSignin from '@/components/Shared/SocialSignin';
 
@@ -53,7 +54,7 @@ const page = () => {
                     {/* google login r kaj */}
                     <div  className='text-center'>
                         <h6>or Sign in with</h6>
-                        {/* <SocialSignin/> */}
+                        <SocialSignin/>
                     </div>
 
                     {/*  */}
