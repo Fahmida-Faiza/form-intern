@@ -1,10 +1,13 @@
 
 "use client"
 
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
+    const session = useSession()
+    console.log(session);
     return (
         <div>
             <div className="navbar bg-base-100">

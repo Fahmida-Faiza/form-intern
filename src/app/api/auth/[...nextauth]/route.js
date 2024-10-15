@@ -2,7 +2,7 @@ import NextAuth from "next-auth/next"
 import CredentialsProvider from "next-auth/providers/credentials";
 // import GoogleProvider from "next-auth/providers/google";
 // import GithubProvider from "next-auth/providers/github";
-// import bcrypt from "bcrypt";
+import bcrypt from "bcrypt";
 import { connectDB } from "@/lib/connectDB";
 
 const handler = NextAuth({
@@ -28,13 +28,13 @@ const handler = NextAuth({
         if (!currentUser) {
           return null;
         }
-        // const passwordMatched = bcrypt.compareSync(
-        //   password,
-        //   currentUser.password
-        // );
-        // if (!passwordMatched) {
-        //   return null;
-        // }
+        const passwordMatched = bcrypt.compareSync(
+          password,
+          currentUser.password
+        );
+        if (!passwordMatched) {
+          return null;
+        }
         return currentUser;
       },
     }),
