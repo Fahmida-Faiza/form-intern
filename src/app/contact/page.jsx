@@ -3,17 +3,36 @@
 import { useSession } from 'next-auth/react';
 import React from 'react';
 
-const page = () => {
+const Contact = () => {
 
-    const {data} = useSession();
-    const handleBooking = async(event) =>{
-        event.preventDefault()
+    const { data } = useSession();
+    const handleBooking = async (event) => {
+        event.preventDefault();
+        const newBooking = {
+            email: data?.user?.email,
+            name: data?.user?.name,
+            address: event.target.address.value,
+            phone: event.target.phone.value,
+            // date: event.target.date.value,
+
+
+        }
+
+        // api
+        const resp = await fetch('http://localhost:3000/contact/api/new-booking', {
+            method: 'POST',
+            body: JSON.stringify(newBooking),
+            headers: {
+                "content-type": "application/json"
+            }
+        })
+        console.log(resp)
     }
     return (
         <div className='w-4/5 mx-auto bg-green-200 my-5'>
             <h3 className='text-blue-700 font-extrabold text-center text-5xl'>This is contact page</h3>
 
-<form onSubmit={handleBooking}>
+            <form onSubmit={handleBooking}>
 
 
                 <label className="input input-bordered flex items-center gap-2 my-5 py-10 bg-white text-black">
@@ -25,7 +44,7 @@ const page = () => {
                         <path
                             d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                     </svg>
-                    <input  defaultValue={data?.user?.name} name="name" type="text" className="grow" placeholder="Name" />
+                    <input defaultValue={data?.user?.name} name="name" type="text" className="grow" placeholder="Name" />
                 </label>
 
 
@@ -40,7 +59,7 @@ const page = () => {
                         <path
                             d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                     </svg>
-                    <input defaultValue={data?.user?.email}  type="text" name="email" className="grow" placeholder="Email" />
+                    <input defaultValue={data?.user?.email} type="text" name="email" className="grow" placeholder="Email" />
                 </label>
 
 
@@ -70,18 +89,18 @@ const page = () => {
 
 
                 <div className='text-center '>
-                   <input
-                   className='btn btn-warning btn-block'
-                    type="submit"
-                    value="Order Confirm"
-                   
-                   />
+                    <input
+                        className='btn btn-warning btn-block'
+                        type="submit"
+                        value="Order Confirm"
+
+                    />
                 </div>
 
-</form>
-          
+            </form>
+
         </div>
     );
 };
 
-export default page;
+export default Contact;

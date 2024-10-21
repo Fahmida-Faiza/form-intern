@@ -1,5 +1,5 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
-require("dotenv").config();
+// require("dotenv").config();
 
 let db;
 

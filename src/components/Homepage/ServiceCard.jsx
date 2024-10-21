@@ -36,7 +36,8 @@ const ServiceCard = () => {
 
                         <div className="card-actions justify-center">
                             {/* <button className="btn  text-white w-full  hover:btn-error  hover:text-white ">Shop Now</button> */}
-                            <Link href={`/contact`}>  <button className="btn  text-white w-full  hover:btn-error  hover:text-white ">View Details</button></Link>
+                            <Link href={`/contact`}>  
+                            <button className="btn  text-white w-full  hover:btn-error  hover:text-white ">View Details</button></Link>
 
                         </div>
                     </div>
