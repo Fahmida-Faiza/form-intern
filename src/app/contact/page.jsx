@@ -14,6 +14,7 @@ const Contact = () => {
             address: event.target.address.value,
             phone: event.target.phone.value,
             // date: event.target.date.value,
+            
 
 
         }

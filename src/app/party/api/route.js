@@ -23,7 +23,7 @@ export const POST = async (request) => {
   const booking = await request.json();
   
   const db = await connectDB();
-  const bookingsCollection = db.collection("contact-bookings");
+  const bookingsCollection = db.collection("bookings");
   
   try {
     const newBooking = await bookingsCollection.insertOne(booking);

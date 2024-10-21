@@ -1,6 +1,6 @@
 import React from 'react';
 
-const page = () => {
+const Party = () => {
     return (
         <div className='w-4/5 mx-auto bg-red-300 my-5'>
             <h3 className='text-blue-300 font-extrabold text-center text-5xl'>This is Party page</h3>
@@ -58,9 +58,17 @@ const page = () => {
                 </svg>
                 <input type="number" className="grow" placeholder="How many of you are attending?" />
             </label>
+            <div className='text-center '>
+                <input
+                    className='btn btn-warning btn-block'
+                    type="submit"
+                    value="Order Confirm"
+
+                />
+            </div>
 
         </div>
     );
 };
 
-export default page;
+export default Party;
