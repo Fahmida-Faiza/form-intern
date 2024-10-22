@@ -13,6 +13,7 @@ const Contact = () => {
             name: data?.user?.name,
             address: event.target.address.value,
             phone: event.target.phone.value,
+            service: "contact"
             // date: event.target.date.value,
             
 
@@ -20,7 +21,7 @@ const Contact = () => {
         }
 
         // api
-        const resp = await fetch('http://localhost:3000/contact/api/new-booking', {
+        const resp = await fetch('http://localhost:3000/bookings/api', {
             method: 'POST',
             body: JSON.stringify(newBooking),
             headers: {

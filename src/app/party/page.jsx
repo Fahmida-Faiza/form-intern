@@ -14,14 +14,13 @@ const Party = () => {
             // address: event.target.address.value,
             phone: event.target.phone.value,
             attend: event.target.attend.value,
+            service: "party"
+
             // date: event.target.date.value,
-
-
-
         }
 
         // api
-        const resp = await fetch('http://localhost:3000/party/api/new-booking', {
+        const resp = await fetch('http://localhost:3000/bookings/api', {
             method: 'POST',
             body: JSON.stringify(newBooking),
             headers: {

@@ -15,12 +15,14 @@ const Event = () => {
             // date: event.target.date.value,
             days: event.target.days.value,
             organization: event.target.organization.value,
+            service: "event"
+
 
 
         }
 
         // api
-        const resp = await fetch('http://localhost:3000/event/api/new-booking', {
+        const resp = await fetch('http://localhost:3000/bookings/api', {
             method: 'POST',
             body: JSON.stringify(newBooking),
             headers: {
