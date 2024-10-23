@@ -2,6 +2,7 @@
 
 import { useSession } from 'next-auth/react';
 import React from 'react';
+import { ToastContainer,toast } from 'react-toastify';
 
 const Event = () => {
     const { data } = useSession();
@@ -29,7 +30,10 @@ const Event = () => {
                 "content-type": "application/json"
             }
         })
-        console.log(resp)
+        // console.log(resp)
+        const response = await resp?.json()
+        toast.success(response?.message)
+        event.target.reset()
     }
 
 

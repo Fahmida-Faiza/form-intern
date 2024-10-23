@@ -2,6 +2,7 @@
 
 import { useSession } from 'next-auth/react';
 import React from 'react';
+import {ToastContainer, toast } from 'react-toastify';
 
 const Contact = () => {
 
@@ -28,7 +29,10 @@ const Contact = () => {
                 "content-type": "application/json"
             }
         })
-        console.log(resp)
+        // console.log(resp)
+        const response = await resp?.json()
+        toast.success(response?.message)
+        event.target.reset()
     }
     return (
         <div className='w-4/5 mx-auto bg-green-200 my-5'>

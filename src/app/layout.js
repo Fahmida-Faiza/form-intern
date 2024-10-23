@@ -2,9 +2,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 
-// import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "@/components/Navbar";
 import AuthProvider from "../../services/AuthProvider";
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -20,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`inter.className bg-white`}>
-        {/* <ToastContainer /> */}
+        <ToastContainer />
         <AuthProvider>
           <Navbar />
 

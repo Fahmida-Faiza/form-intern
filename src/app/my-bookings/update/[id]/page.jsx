@@ -1,23 +1,39 @@
 "use client"
 
 import { useSession } from 'next-auth/react';
+import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
-import React from 'react';
-import {ToastContainer, toast } from 'react-toastify';
+const Contact = ({params}) => {
 
-const Party = () => {
     const { data } = useSession();
+    const [booking, setBooking] = useState([]);
+
+
+    const loadBooking = async () => {
+        const bookingDetail = await fetch(
+            `http://localhost:3000/my-bookings/api/booking/${params.id}`
+        );
+        const data = await bookingDetail.json();
+        setBooking(data.data);
+    };
+
+
+
+
+
     const handleBooking = async (event) => {
         event.preventDefault();
         const newBooking = {
             email: data?.user?.email,
             name: data?.user?.name,
-            // address: event.target.address.value,
+            address: event.target.address.value,
             phone: event.target.phone.value,
-            attend: event.target.attend.value,
-            service: "party"
-
+            service: "contact"
             // date: event.target.date.value,
+
+
+
         }
 
         // api
@@ -33,11 +49,43 @@ const Party = () => {
         toast.success(response?.message)
         event.target.reset()
     }
-    return (
-        <div className='w-4/5 mx-auto bg-red-300 my-5'>
-            <h3 className='text-blue-300 font-extrabold text-center text-5xl'>This is Party page</h3>
-            <form onSubmit={handleBooking}>
 
+    const handleUpdateBooking = async (event) => {
+        event.preventDefault();
+        const updatedBooking = {
+            // date: event.target.date.value,
+            phone: event.target.phone.value,
+            address: event.target.address.value,
+        };
+        const resp = await fetch(
+            `http://localhost:3000/my-bookings/api/booking/${params.id}`,
+            {
+                method: "PATCH",
+                body: JSON.stringify(updatedBooking),
+                headers: {
+                    "content-type": "application/json",
+                },
+            }
+        );
+        if (resp.status === 200) {
+            toast.success("Updated Successfully")
+        }
+    };
+
+
+
+
+    useEffect(() => {
+        loadBooking();
+    }, [params]);
+
+
+
+    return (
+        <div className='w-4/5 mx-auto bg-green-200 my-5'>
+            <h3 className='text-blue-700 font-extrabold text-center text-5xl'>This is Update page</h3>
+
+            <form onSubmit={handleUpdateBooking}>
 
 
                 <label className="input input-bordered flex items-center gap-2 my-5 py-10 bg-white text-black">
@@ -49,7 +97,7 @@ const Party = () => {
                         <path
                             d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                     </svg>
-                    <input defaultValue={data?.user?.name} name="name"  type="text" className="grow" placeholder="Name" />
+                    <input defaultValue={data?.user?.name} name="name" type="text" className="grow" placeholder="Name" />
                 </label>
 
 
@@ -64,10 +112,8 @@ const Party = () => {
                         <path
                             d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                     </svg>
-                    <input type="text" defaultValue={data?.user?.email}  name="email" className="grow" placeholder="Email" />
+                    <input defaultValue={data?.user?.email} type="text" name="email" className="grow" placeholder="Email" />
                 </label>
-
-
 
 
                 <label className="input input-bordered flex items-center gap-2 my-5 py-10 bg-white text-black">
@@ -79,8 +125,11 @@ const Party = () => {
                         <path
                             d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                     </svg>
-                    <input type="number" name="phone" className="grow" placeholder="PhoneNumber" />
+                    <input
+                        defaultValue={booking.address}
+                    type="text" name="address" className="grow" placeholder="Address" />
                 </label>
+
                 <label className="input input-bordered flex items-center gap-2 my-5 py-10 bg-white text-black">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -90,20 +139,25 @@ const Party = () => {
                         <path
                             d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                     </svg>
-                    <input type="number" name="attend" className="grow" placeholder="How many of you are attending?" />
+                    <input
+                    defaultValue={booking.phone}
+                     type="number" name="phone" className="grow" placeholder="PhoneNumber" />
                 </label>
+
+
                 <div className='text-center '>
                     <input
                         className='btn btn-warning btn-block'
                         type="submit"
-                        value="Order Confirm"
+                        value="Update Confirm"
 
                     />
                 </div>
 
-</form>
+            </form>
+
         </div>
     );
 };
 
-export default Party;
+export default Contact;
