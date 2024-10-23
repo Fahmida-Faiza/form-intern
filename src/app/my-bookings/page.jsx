@@ -1,5 +1,6 @@
 "use client";
 import { useSession } from "next-auth/react";
+// import Link from "next/link";
 
 import React, { useEffect, useState } from "react";
 // import { ToastContainer, toast } from "react-toastify";
@@ -16,19 +17,24 @@ const Page = () => {
        
     };
 
-    // const handleDelete = async (id) => {
-    //     const deleted = await fetch(
-    //         `http://localhost:3000/my-bookings/api/booking/${id}`, {
-    //         method: "DELETE",
-    //     }
-    //     );
-    //     const resp = await deleted.json();
-    //     console.log(resp)
-    //     if (resp?.response?.deletedCount > 0) {
 
-    //         loadData();
-    //     }
-    // };
+    // delete
+
+    const handleDelete = async (id) => {
+        const deleted = await fetch(
+            `http://localhost:3000/my-bookings/api/delete-booking/${id}`, {
+            method: "DELETE",
+        }
+        );
+        const resp = await deleted.json();
+        console.log(resp)
+        if (resp?.response?.deletedCount > 0) {
+
+            loadData();
+        }
+    };
+
+    // ////////
 
     useEffect(() => {
         loadData();
@@ -51,7 +57,7 @@ const Page = () => {
                         {/* head */}
                         <thead>
                             <tr className="text-blue-800">
-                                <th></th>
+                                <th>1</th>
                                 <th>Name</th>
                                 
                                 
@@ -69,7 +75,7 @@ const Page = () => {
                             {/* row 1 */}
                             {bookings?.map(({ _id, name, address, phone, days , organization, attend,}) => (
                                 <tr  key={_id}>
-                                    <th>1</th>
+                                    <th></th>
                                     <td>{name}</td>
                                     <td>{address}</td>
                                     <td>{phone}</td>
@@ -79,13 +85,13 @@ const Page = () => {
                                     
                                     <td>
                                         <div className="flex items-center space-x-3">
-                                            {/* <Link href={`/my-bookings/update/${_id}`}><button class="btn btn-primary">Edit</button></Link>
+                                             {/* <Link href={`/my-bookings/update/${_id}`}><button class="btn btn-primary">Edit</button></Link> */}
                                             <button
                                                 onClick={() => handleDelete(_id)}
                                                 class="btn btn-error"
                                             >
                                                 Delete
-                                            </button> */}
+                                            </button> 
                                         </div>
                                     </td>
                                 </tr>
