@@ -7,7 +7,7 @@ import React from 'react';
 
 const Navbar = () => {
     const session = useSession()
-    console.log(session);
+    // console.log(session);
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -80,10 +80,10 @@ const navItems = [
         path: "/my-bookings"
     },
     
-    {
-        title: "Contact",
-        path: "/contact"
-    },
+    // {
+    //     title: "Contact",
+    //     path: "/contact"
+    // },
    
    
 ]

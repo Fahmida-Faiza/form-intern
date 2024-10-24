@@ -2,7 +2,7 @@
 import { useSession } from "next-auth/react";
 
 import React, { useEffect, useState } from "react";
-// import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 const Page = () => {
     const session = useSession();
@@ -36,7 +36,7 @@ const Page = () => {
 
     return (
         <div className="container mx-auto">
-            {/* {/* <ToastContainer /> */}
+              <ToastContainer /> 
             <div className="relative  h-72">
 
                 <div className="absolute h-full left-0 top-0 flex items-center justify-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] ">
@@ -61,21 +61,23 @@ const Page = () => {
                                 <th>Days</th>
                                 <th>Organization</th>
                                 <th>Attends people</th>
+                                <th>services</th>
 
 
                             </tr>
                         </thead>
                         <tbody>
                             {/* row 1 */}
-                            {bookings?.map(({ _id, name, address, phone, days, organization, attend, }) => (
+                            {bookings?.map(({ _id, name, address, phone, days, organization, attend,service }, index) => (
                                 <tr key={_id}>
-                                    <th>1</th>
+                                    <th>{index+1}</th>
                                     <td>{name}</td>
                                     <td>{address}</td>
                                     <td>{phone}</td>
                                     <td>{days}</td>
                                     <td>{organization}</td>
                                     <td>{attend}</td>
+                                    <td>{service}</td>
 
                                     <td>
                                         <div className="flex items-center space-x-3">

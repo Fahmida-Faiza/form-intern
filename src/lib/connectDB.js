@@ -6,8 +6,8 @@ let db;
 export const connectDB = async () => {
   if (db) return db;
   try {
-    // const uri = process.env.NEXT_PUBLIC_MONGODB_URI;
-    const uri = `mongodb://0.0.0.0:27017/`;
+    const uri = process.env.NEXT_PUBLIC_MONGODB_URI;
+    // const uri = `mongodb://0.0.0.0:27017/`;
     
     const client = new MongoClient(uri, {
       serverApi: {

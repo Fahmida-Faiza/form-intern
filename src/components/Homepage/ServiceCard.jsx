@@ -28,16 +28,16 @@ const ServiceCard = () => {
 
                     <div className="card-body text-center">
                         <h2 className="card-title justify-center">CONTACT INFORMATION</h2>
-                        <p>North Star ROYAL Casual Lace-Up Sneaker for Men</p>
+                        {/* <p>North Star ROYAL Casual Lace-Up Sneaker for Men</p>
                         <div className=''>
                             <span className='text-gray-400'>Tk <del>3299</del> </span>
                             <span className='text-red-500'>Tk 2960</span>
-                        </div>
+                        </div> */}
 
                         <div className="card-actions justify-center">
                             {/* <button className="btn  text-white w-full  hover:btn-error  hover:text-white ">Shop Now</button> */}
-                            <Link href={`/contact`}>  
-                            <button className="btn  text-white w-full  hover:btn-error  hover:text-white ">View Details</button></Link>
+                            <Link href={`/contact`}>
+                                <button className="btn  text-white w-full  hover:btn-error  hover:text-white ">View Details</button></Link>
 
                         </div>
                     </div>
@@ -63,11 +63,11 @@ const ServiceCard = () => {
                     </div>
                     <div className="card-body text-center">
                         <h2 className="card-title justify-center">PARTY INVITE</h2>
-                        <p>North Star ROYAL Casual Lace-Up Sneaker for Men</p>
+                        {/* <p>North Star ROYAL Casual Lace-Up Sneaker for Men</p>
                         <div className=''>
                             <span className='text-gray-400'>Tk <del>3299</del> </span>
                             <span className='text-red-500'>Tk 2960</span>
-                        </div>
+                        </div> */}
 
                         <div className="card-actions justify-center">
                             {/* <button className="btn  text-white w-full  hover:btn-error  hover:text-white ">Shop Now</button> */}
@@ -97,14 +97,14 @@ const ServiceCard = () => {
 
                     <div className="card-body text-center">
                         <h2 className="card-title justify-center">EVENT REGISTRATION</h2>
-                        <p>North Star ROYAL Casual Lace-Up Sneaker for Men</p>
+                        {/* <p>North Star ROYAL Casual Lace-Up Sneaker for Men</p>
 
 
 
                         <div className=''>
                             <span className='text-gray-400'>Tk <del>3299</del> </span>
                             <span className='text-red-500'>Tk 2960</span>
-                        </div>
+                        </div> */}
 
 
                         <div className="card-actions justify-center ">

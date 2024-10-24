@@ -2,7 +2,7 @@
 import { useSession } from "next-auth/react";
 
 import React, { useEffect, useState } from "react";
-// import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 const Page = () => {
     const session = useSession();
@@ -37,7 +37,7 @@ const Page = () => {
 
     return (
         <div className="container mx-auto">
-            {/* {/* <ToastContainer /> */}
+             <ToastContainer /> 
             <div className="relative  h-72">
               
                 <div className="absolute h-full left-0 top-0 flex items-center justify-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] ">
