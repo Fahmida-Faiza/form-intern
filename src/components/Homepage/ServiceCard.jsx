@@ -7,21 +7,21 @@ const ServiceCard = () => {
         <div>
             {/*card  */}
 
-            <div className='mx-auto  w-[90%] grid grid-cols-1 lg:grid-cols-3 gap-4 text-black '>
+            <div className='mx-auto  w-[90%] grid grid-cols-1 lg:grid-cols-3 gap-4 mt-20 text-black '>
                 <div className="card hover:shadow-xl">
                     {/*..............................................  */}
-                    <div className="group relative">
+                    <div className="">
                         {/* Image 1 - Shown by default */}
 
                         <figure>
                             <Image
-                                src="/assets/shoes-1.jpg" width="1200" height="1200" className="w-full h-full object-cover" alt="Banner 2" />
+                                src="/assets/picture1.jpg" width="1200" height="1200" className="w-full h-full object-cover" alt="Banner 2" />
                         </figure>
 
-                        <figure>
+                        {/* <figure>
                             <Image
                                 src="/assets/shoe_2.jpg" width="1200" height="1200" className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300" alt="Banner 2" />
-                        </figure>
+                        </figure> */}
 
 
                     </div>
@@ -46,18 +46,18 @@ const ServiceCard = () => {
                 {/* 2nd card */}
                 <div className="card   hover:shadow-xl ">
                     {/*..............................................  */}
-                    <div className="group relative">
+                    <div className="">
                         {/* Image 1 - Shown by default */}
 
                         <figure>
                             <Image
-                                src="/assets/shoes2.jpg" width="1200" height="1200" className="w-full h-full object-cover" alt="Banner 2" />
+                                src="/assets/picture3.jpg" width="1200" height="1200" className="w-full h-full object-cover" alt="Banner 2" />
                         </figure>
-
+{/* 
                         <figure>
                             <Image
                                 src="/assets/shoes2.png" width="1200" height="1200" className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300" alt="Banner 2" />
-                        </figure>
+                        </figure> */}
 
 
                     </div>
@@ -79,18 +79,17 @@ const ServiceCard = () => {
 
                 {/* 3rd card */}
                 <div className="card hover:shadow-xl">
-                    <div className="group relative">
+                    <div className="">
                         {/* Image 1 - Shown by default */}
 
                         <figure>
                             <Image
-                                src="/assets/shoes-1.jpg" width="1200" height="1200" className="w-full h-full object-cover" alt="Banner 2" />
+                                src="/assets/picture2.jpg" width="1200" height="1200" className="w-full h-full object-cover" alt="Banner 2" />
                         </figure>
-
-                        <figure>
+                        {/* <figure>
                             <Image
                                 src="/assets/shoe_2.jpg" width="1200" height="1200" className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300" alt="Banner 2" />
-                        </figure>
+                        </figure> */}
 
 
                     </div>

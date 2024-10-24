@@ -22,6 +22,6 @@ return NextResponse.next()
 export const config = {
     matcher :
      [
-       '/my-bookings/:path*', '/all-bookings/:path*', "/party/", '/contact/', '/event/'
+       '/my-bookings/:path*', '/all-bookings/', 
     ]
 }

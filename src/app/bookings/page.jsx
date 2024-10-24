@@ -9,8 +9,8 @@ const Page = () => {
     const [bookings, setBooking] = useState([]);
     const loadData = async () => {
         const resp = await fetch(
-            // `http://localhost:3000/my-bookings/api/${session?.data?.user?.email}`
-            `http://localhost:3000/my-bookings/api/emailgamer1719@gmail.com`
+            // `https://form-intern-snowy.vercel.app/my-bookings/api/${session?.data?.user?.email}`
+            `https://form-intern-snowy.vercel.app/my-bookings/api/emailgamer1719@gmail.com`
         );
         const data = await resp.json();
         setBooking(data?.myBookings);
@@ -19,7 +19,7 @@ const Page = () => {
 
     // const handleDelete = async (id) => {
     //     const deleted = await fetch(
-    //         `http://localhost:3000/my-bookings/api/booking/${id}`, {
+    //         `https://form-intern-snowy.vercel.app/my-bookings/api/booking/${id}`, {
     //         method: "DELETE",
     //     }
     //     );

@@ -11,7 +11,7 @@
 //     const [bookings, setBooking] = useState([]);
 //     const loadData = async () => {
 //         const resp = await fetch(
-//             `http://localhost:3000/my-bookings/api/${session?.data?.user?.email}`
+//             `https://form-intern-snowy.vercel.app/my-bookings/api/${session?.data?.user?.email}`
 //         );
 //         const data = await resp.json();
 //         setBooking(data?.myBookings);
@@ -23,7 +23,7 @@
 
 //     const handleDelete = async (id) => {
 //         const deleted = await fetch(
-//             `http://localhost:3000/my-bookings/api/booking/${id}`, {
+//             `https://form-intern-snowy.vercel.app/my-bookings/api/booking/${id}`, {
 //             method: "DELETE",
 //         }
 //         );
@@ -123,14 +123,14 @@ const Page = () => {
     const loadData = useCallback(async () => {
         if (!session?.data?.user?.email) return;
         const resp = await fetch(
-            `http://localhost:3000/my-bookings/api/${session?.data?.user?.email}`
+            `https://form-intern-snowy.vercel.app/my-bookings/api/${session?.data?.user?.email}`
         );
         const data = await resp.json();
         setBooking(data?.myBookings);
     }, [session?.data?.user?.email]);
 
     const handleDelete = useCallback(async (id) => {
-        const deleted = await fetch(`http://localhost:3000/my-bookings/api/booking/${id}`, {
+        const deleted = await fetch(`https://form-intern-snowy.vercel.app/my-bookings/api/booking/${id}`, {
             method: "DELETE",
         });
         const resp = await deleted.json();

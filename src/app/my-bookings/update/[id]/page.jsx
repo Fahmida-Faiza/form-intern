@@ -18,7 +18,7 @@
 //     useEffect(() => {
 //         const loadBooking = async () => {
 //             const bookingDetail = await fetch(
-//                 `http://localhost:3000/my-bookings/api/booking/${params.id}`
+//                 `https://form-intern-snowy.vercel.app/my-bookings/api/booking/${params.id}`
 //             );
 //             const data = await bookingDetail.json();
 //             setBooking(data.data);
@@ -43,7 +43,7 @@
 //         }
 
 //         // api
-//         const resp = await fetch('http://localhost:3000/bookings/api', {
+//         const resp = await fetch('https://form-intern-snowy.vercel.app/bookings/api', {
 //             method: 'POST',
 //             body: JSON.stringify(newBooking),
 //             headers: {
@@ -64,7 +64,7 @@
 //             address: event.target.address.value,
 //         };
 //         const resp = await fetch(
-//             `http://localhost:3000/my-bookings/api/booking/${params.id}`,
+//             `https://form-intern-snowy.vercel.app/my-bookings/api/booking/${params.id}`,
 //             {
 //                 method: "PATCH",
 //                 body: JSON.stringify(updatedBooking),
@@ -180,7 +180,7 @@ const Contact = ({ params }) => {
 
     const loadBooking = async () => {
         const bookingDetail = await fetch(
-            `http://localhost:3000/my-bookings/api/booking/${params.id}`
+            `https://form-intern-snowy.vercel.app/my-bookings/api/booking/${params.id}`
         );
         const data = await bookingDetail.json();
         setBooking(data.data);
@@ -200,7 +200,7 @@ const Contact = ({ params }) => {
             service: "contact",
         };
 
-        const resp = await fetch('http://localhost:3000/bookings/api', {
+        const resp = await fetch('https://form-intern-snowy.vercel.app/bookings/api', {
             method: 'POST',
             body: JSON.stringify(newBooking),
             headers: {
@@ -219,7 +219,7 @@ const Contact = ({ params }) => {
             address: event.target.address.value,
         };
         const resp = await fetch(
-            `http://localhost:3000/my-bookings/api/booking/${params.id}`,
+            `https://form-intern-snowy.vercel.app/my-bookings/api/booking/${params.id}`,
             {
                 method: "PATCH",
                 body: JSON.stringify(updatedBooking),

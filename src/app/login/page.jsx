@@ -111,9 +111,9 @@ const LoginPageContent = () => {
 
     return (
         <div className='container mx-auto px-24 bg-slate-100 text-black'>
-            <div className='grid grid-cols-2 gap-12'>
+            <div className='grid grid-cols-2 gap-12 items-center'>
                 <div>
-                    <Image src="/assets/images/login/login.svg" height="540" width="540" alt="login" />
+                    <Image src="/assets/picture5.jpg" height="540" width="540" alt="login" className='rounded-3xl'/>
                 </div>
                 <div className='border-2 p-12'>
                     <form onSubmit={handleLogin}>

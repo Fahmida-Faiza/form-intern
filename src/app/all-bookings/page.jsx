@@ -9,7 +9,7 @@ const Page = () => {
     const [bookings, setBooking] = useState([]);
     const loadData = async () => {
         const resp = await fetch(
-            `http://localhost:3000/all-bookings/api`
+            `https://form-intern-snowy.vercel.app/all-bookings/api`
         );
         const data = await resp.json();
         setBooking(data?.myBookings);
@@ -18,7 +18,7 @@ const Page = () => {
 
     // const handleDelete = async (id) => {
     //     const deleted = await fetch(
-    //         `http://localhost:3000/my-bookings/api/booking/${id}`, {
+    //         `https://form-intern-snowy.vercel.app/my-bookings/api/booking/${id}`, {
     //         method: "DELETE",
     //     }
     //     );

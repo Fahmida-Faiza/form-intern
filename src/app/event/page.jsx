@@ -23,7 +23,7 @@ const Event = () => {
         }
 
         // api
-        const resp = await fetch('http://localhost:3000/bookings/api', {
+        const resp = await fetch('https://form-intern-snowy.vercel.app/bookings/api', {
             method: 'POST',
             body: JSON.stringify(newBooking),
             headers: {
